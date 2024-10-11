@@ -1,6 +1,5 @@
 """
- Introducir una cadena por teclado y mostrarla al reves 
+Introducir una cadena por teclado y mostrarla al reves
 """
-cadena = input("introduce una cadena: ")
-
-print(cadena[::-1])
+cadena = input("Introduce una cadena: ") # Ingresar cadena por teclado
+print(cadena[::-1])  # invertir cadena 
