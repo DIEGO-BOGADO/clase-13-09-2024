@@ -7,7 +7,7 @@ lista = []
 while len(lista) < 10:
     lista.append(randint(0, 100))
     
- """c=0
+ ""c=0
  while c<10:
    lista.append(randint(0, 100))   # genera numeros de cero a 99
    c+=1
