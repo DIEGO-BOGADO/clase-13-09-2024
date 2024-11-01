@@ -1,19 +1,19 @@
-"""ejercicio 06
-escriba un programa que reciba una cantidad de numeros y devuelva el mayor 
+"""Ejercicio 3 a
+Escriba un programa que reciba una cantidad de numeros y devuelva el mayor
 """
 def obtener_numeros():
     numeros = []
     while True:
-        entrada = input("ingrese un numero (o ' q' para salir):")
+        entrada = input("Ingrese un número (o 'q' para salir): ")
         if entrada.lower() == 'q':
             break
         try:
             numero = float(entrada)
             numeros.append(numero)
         except ValueError:
-            print("por favor, ingrese un numero valido.")
+            print("Por favor, ingrese un número válido.")
     return numeros
 lista = obtener_numeros()
 print(lista)
-print("mayor:", max(lista))
-print("menor", min(lista))
+print("Mayor:", max(lista))
+print("Menor:", min(lista))

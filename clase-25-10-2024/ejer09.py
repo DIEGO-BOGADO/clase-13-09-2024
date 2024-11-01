@@ -1,7 +1,6 @@
-"""ejercicio 09
-escriba un programa que reciba una cantidad de numeros y devuelva el mayor 
+"""Ejercicio 05
+Escriba un programa que genere una lista de numeros aleatorios entre 1 y 100
 """
-
 
 def aleatorio():
     import random

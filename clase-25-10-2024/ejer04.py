@@ -1,13 +1,12 @@
-"""ejercicio 04
-escribir un programa que pida una cadena de caracteres y imprima la longitud de la cadena 
-tambien imprimir la cadena alreves 
+"""Ejercicio 3
+Escriba un programa que reciba dos numeros y devuelva el mayor
 """
-#cad es una variable de tipo string
-#input es la funcion que pide una cadena
-cad = input("introduce una cadena:")
-#funcion len () da el tamaño de la cadena
-longitud = len(cad)
-print("tiene"longitud, "caracteres")
-print(f"tiene {longitud} caracteres")
-#imprime la cadena alreves
-print(cad{::-1})
+nro1 = int(input("Escriba un nro: "))
+nro = int(input("Escriba un nro: "))
+
+print(max(nro1,nro))
+
+if nro1 > nro:
+    print(nro1)
+else:
+    print(nro)
