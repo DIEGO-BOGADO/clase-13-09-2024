@@ -14,16 +14,56 @@ nro producto    precio  iva
 9   monitor 27" 200$     10%
 """
 
-productos = {
-    1:{"precio": 50, "iva": 10, "nombre": "teclado"},
-    2:{"precio": 20, "iva": 5, "nombre": "raton"},
-    3:{"precio": 80, "iva": 10, "nombre": "monitor 15"},
-    4:{"precio": 110, "iva": 10, "nombre": "monitor 17"},
-    5:{"precio": 135, "iva": 10, "nombre": "monitor 19"},
-    6:{"precio": 40, "iva": 5, "nombre": "raton rgb"},
-    7:{"precio": 70, "iva": 10, "nombre": "teclado rgb"},
-    8:{"precio": 160, "iva": 10, "nombre": "monitor 21"},
-    9:{"precio": 200, "iva": 10, "nombre": "monitor 27"},
-}
+def generar_factura():
+    """Genera una factura de venta para los productos especificados."""
 
-print(productos.get(1).get("nombre"))
+    # Productos y sus características
+    productos = {
+        1: {"nombre": "teclado", "precio": 50, "iva": 10},
+        2: {"nombre": "ratón", "precio": 20, "iva": 5},
+        3: {"nombre": "monitor 15\"", "precio": 80, "iva": 10},
+        4: {"nombre": "monitor 17\"", "precio": 110, "iva": 10},
+        5: {"nombre": "monitor 19\"", "precio": 135, "iva": 10},
+        6: {"nombre": "ratón RGB", "precio": 40, "iva": 5},
+        7: {"nombre": "teclado RGB", "precio": 70, "iva": 10},
+        8: {"nombre": "monitor 21\"", "precio": 160, "iva": 10},
+        9: {"nombre": "monitor 27\"", "precio": 200, "iva": 10}
+    }
+
+    # Inicializar variables
+    total_compra = 0
+    iva_total = 0
+
+    # Solicitar al usuario la cantidad de cada producto
+    while True:
+        try:
+            numero_producto = int(input("Ingrese el número de producto (0 para finalizar): "))
+            if numero_producto == 0:
+                break
+            cantidad = int(input("Ingrese la cantidad: "))
+            if cantidad <= 0:
+                print("La cantidad debe ser mayor a 0.")
+                continue
+
+            # Calcular el subtotal, el IVA del producto y sumarlo al total
+            producto = productos[numero_producto]
+            subtotal = producto["precio"] * cantidad
+            iva_producto = (subtotal * producto["iva"]) / 100
+            total_compra += subtotal + iva_producto
+            iva_total += iva_producto
+
+        except KeyError:
+            print("Número de producto inválido.")
+        except ValueError:
+            print("Ingrese un valor numérico válido.")
+
+    # Imprimir la factura
+    print("\n--- Factura de Venta ---")
+    print("------------------------")
+    # Aquí puedes personalizar la impresión de la factura según tus necesidades
+    print(f"Total a pagar: ${total_compra:.2f}")
+    print(f"IVA total: ${iva_total:.2f}")
+    print("------------------------")
+if __name__ == "__main__":
+    generar_factura()
+    
