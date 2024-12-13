@@ -4,7 +4,8 @@ Escribir un programa que pida dos números y me de la suma, la resta, la multipl
 var1 = float(input("Escriba un nro: "))
 var2 = float(input("Escriba un nro: "))
 
-suma = var1 + var2
+suma =2
+var1 + var2
 print(f"la suma es : {suma}")
 resta = var1 - var2
 print(f"la resta es : {resta}")
